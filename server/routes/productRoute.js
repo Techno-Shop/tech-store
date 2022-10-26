@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const product = require("../models/productModels");
+const product = require("../database/productModels");
 
 // add product
 router.post("/add", (req, res) => {
