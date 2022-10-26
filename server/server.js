@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 // load env variables
 require('dotenv').config()
 var conn = require('./database');
+const productRouter = require("./routes/productRoute");
 const app = express();
 const PORT= process.env.PORT || 3001;
  // express app config
@@ -17,9 +18,8 @@ app.use(cors({origin : ["http://localhost:3000"],
  credentials : true,
 }));
  app.use("/auth", userRoutes);
- app.listen(PORT, () =>
+app.listen(PORT, () =>
 console.log(`app listening at http://localhost:${PORT}`)
 );
-
 
 
