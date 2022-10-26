@@ -1,11 +1,12 @@
 
+const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
   },
   field: {
-    type: string,
+    type: String,
     required: true,
   },
   price: {
@@ -20,11 +21,8 @@ const productSchema = new mongoose.Schema({
     type: String,
     default: "latest available of this generation ",
   },
-  image: {
-    type: Array,
-    required: true,
-  },
+  image: String,
 });
 
-
+const product=mongoose.model("products",productSchema)
 module.exports = product;
