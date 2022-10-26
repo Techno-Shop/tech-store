@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-require('dotenv').config();
 // const MONGODB_URI = "mongodb+srv://ad:<1234>@cluster0.0o9ethn.mongodb.net/tech-store?retryWrites=true&w=majority"
 mongoose
   .connect( process.env.MONGODB_URI,

@@ -1,91 +1,61 @@
 const Users = require('../database/userModels');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const ValidateRegister = require("../validation/Register");
-const ValidateLogin = require("../validation/Login");
-const userModels = require('../database/userModels');
 
 
 
 async function register(req, res) {
-    const { errors, isValid } = ValidateRegister(req.body);
     try {
-        if (!isValid) {
-            res.status(404).json(errors);
-        } else {
-            Users.findOne({ email: req.body.email }).then(async (exist) => {
-                if (exist) {
-                    error.email = "user already exists";
-                } else {
-                    const hashedPassword = bcrypt.hashSync(req.body.password, 10)// hashed password;
-                    req.body.password = hashedPassword;
-                    req.body.role = "USER";
-                    await Users.create(req.body);
-                    res.status(200).json({ message: "success" });
-                }
-            })
-        }
+        // get email and psw word
+        const { username, role, email, password, imageUrl } = req.body;
+        //hashing the password
+        const hashedPassword = bcrypt.hashSync(password, 10);
+        await Users.create({ username, role, email, password: hashedPassword, imageUrl });
+        res.status(201).json({ message: "user added successfully" })
     } catch (err) {
-        res.status(404).json(err.message);
+        console.log(err.message);
+        res.status(401).json({ message: "email already in use, please try another email address" })
     }
 }
 
 
 async function login(req, res) {
-    const { errors, isValid } = ValidateLogin(req.body);
     try {
-        if (!isValid) {
-            res.status(404).json(errors)
-        } else {
-            Users.findOne({ email: req.body.email })
-                .then(user => {
-                    if (!user) {
-                        errors.email = "user not found";
-                        res.status(404).json(errors)
-                    } else {
-                        bcrypt.compare(req.body.password, user.password)
-                            .then(isMatch => {
-                                if (!isMatch) {
-                                    errors.password = "worong password";
-                                    res.status(404).json(errors)
-                                } else {
-                                    var token = jwt.sign({
-                                        id: userModels._id,
-                                        username: user.username,
-                                        email: user.email,
-                                        password: user.password,
-                                        role: user.role,
-                                        imageUrl: user.imageUrl
-                                    }, process.env.PRIVATE_KEY, { expiresIn: '2h' });
-                                    res.status(200).json({
-                                        message: "success",
-                                        token: "Bearer" + token
-                                    })
-                                }
-                            })
-                    }
-                })
+        const { email, password } = req.body;
+        const user = await Users.findOne({ email });
+        if (!user) return res.status(404).json({ message: "email not found!! please enter your exact email address or you can make a new one" })
+
+        const isMatched = bcrypt.compareSync(password, user.password);
+        if (!user) return response.status(404).json({ message: "wrong password" })
+        // create a jwt token
+        // please visit (https://www.rfc-editor.org/rfc/rfc7519) for more info 
+        const exp = Date.now() + 1000 * 60 * 60 * 24 * 30;
+        const token = jwt.sign({ sub: user._id, exp }, process.env.SECRET_jwt_code);
+        // take a look here (https://github.com/jshttp/cookie) so you can understand the diffrent options that can help you to Set the cookie 
+        // Authorization : cookie name  / token is the value / option
+        const options = {
+            expires: new Date(exp),
+            // httpOnly make only the browser & our server can read the cookie
+            httpOnly: true,
+            sameSite: "lax",
+            secure: process.env.NODE_ENV === "production",
         }
-    } catch (error) {
-        res.status(404).json(error.message);
+        res.cookie("authorization", token, options);
+        // send it
+        res.status(201).json({ message: " welcome", token, user })
+    } catch (err) {
+        console.log(err);
+        res.status(404).json("error")
     }
 }
 
-// if user is logged in
-const Test = (req, res) => {
-    res.send("welcome")
-}
-// id admin is logged in
-const Admin = (req, res) => {
-    res.send("welcome admin")
-}
 
 const logout = async (req, res) => {
     try {
         res.clearCookie("Authorization")
         res.status(200).json(" you just signed out, GOODBYE!! ");
     } catch (err) {
-        return response.sendStatus(400)
+        return response.sendStatus(404)
     }
 }
 
@@ -94,7 +64,7 @@ const checkAuth = (req, res) => {
     try {
         res.sendStatus(200);
     } catch (err) {
-        return res.sendStatus(400);
+        return res.sendStatus(404);
     }
 }
 
@@ -102,8 +72,6 @@ const checkAuth = (req, res) => {
 module.exports = {
     register,
     login,
-    Test,
-    Admin,
     logout,
     checkAuth,
 }
