@@ -19,8 +19,8 @@ function Admin(props) {
     } else if (view === "products") {
       return (
         <Main
-          cols={[{ name: "khalil", lastName: "ben ali" }]}
-          rows={[{ id: 1, name: "khalil", lastName: "ben ali" }]}
+          cols={[{ name: "adhem", lastName: "hs" }]}
+          rows={[{ id: 1, name: "adhem", lastName: "hs" }]}
         />
       );
     } else if (view === "add") {
