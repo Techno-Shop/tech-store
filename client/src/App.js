@@ -19,10 +19,15 @@ const [data,setData]=useState([]);
     <div className="App">
       <Router>
         <Routes>
+
         
-          <Route path="/" element={<Admin cols={[data]} rows={data}/>} />
-          <Route path="/prod" element={<Sidebar/>} />
-          <Route path="/add" element={<Sidebar/>} />
+          
+         
+
+
+          {/* TODO: change the main view to the home page then add a route to the admin with /admin */}
+          <Route path="/" element={ <Admin/>} />
+       
 
         </Routes>
       </Router>
