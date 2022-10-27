@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import Main from "./main/Main";
 import AddProduct from "./main/Comps/AddProduct";
 function Admin(props) {
-  const [view, setView] = useState("Users");
+  const [view, setView] = useState("users");
 
   const changeView = (v) => {
     setView(v);
