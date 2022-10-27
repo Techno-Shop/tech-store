@@ -69,9 +69,31 @@ const checkAuth = (req, res) => {
 }
 
 
+const getAllUsers = (req, res) => {
+    Users.find({}, (err, results) => {
+      err ? console.log(err) : res.send(results);
+    });
+  }
+
+const getOneUser = (req, res) => {
+    Users.findOne({ _id: req.params.id }, (err, results) => {
+      err ? console.log(err) : res.send(results);
+    });
+  }
+
+
+
+
+
+
+
+
+
 module.exports = {
     register,
     login,
     logout,
     checkAuth,
+    getAllUsers,
+    getOneUser
 }
