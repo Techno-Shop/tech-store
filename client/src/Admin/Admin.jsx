@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import Main from "./main/Main";
 import AddProduct from "./main/Comps/AddProduct";
 function Admin(props) {
-  const [view, setView] = useState("Users");
+  const [view, setView] = useState("users");
 
   const changeView = (v) => {
     setView(v);
@@ -19,8 +19,8 @@ function Admin(props) {
     } else if (view === "products") {
       return (
         <Main
-          cols={[{ name: "khalil", lastName: "ben ali" }]}
-          rows={[{ id: 1, name: "khalil", lastName: "ben ali" }]}
+          cols={[{ name: "adhem", lastName: "hs" }]}
+          rows={[{ id: 1, name: "adhem", lastName: "hs" }]}
         />
       );
     } else if (view === "add") {

@@ -1,5 +1,7 @@
 const isEmpty=require("./isEmpty.js");
 const validator=require("validator");
+
+
 module.exports = function ValidateProduct(data) {
     let errors = {};
     data.name=!isEmpty(data.name) ? data.name: "" ;
