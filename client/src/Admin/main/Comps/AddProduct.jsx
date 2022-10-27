@@ -6,7 +6,6 @@ import axios from "axios"
 
 function AddProduct() {
   const [url, setUrl] = useState("");
-  
   const [product, setProduct] = useState({});
   const [image, setImage] = useState("");
 
@@ -25,14 +24,16 @@ function AddProduct() {
     formData.append("api_key", "494476953465418");
     formData.append("upload_preset","z1o9n4vg")
     axios.post(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,formData)
-    .then((res)=>{console.log(res.data.url);setUrl(JSON.stringify(res.data.url));console.log(url);setProduct({...product,imageUrl:url})})
+    .then((res)=>{setProduct({...product,imageUrl:JSON.stringify(res.data.url)})})
     .catch((err) => {
         console.log(err);
     })    
   };
 
   const uploadHandler=()=>{
-    
+    axios.post("http://localhost:3001/product/add",product)
+    .then((res)=>console.log(res))
+    .catch((err)=>console.log(err))
   }
 
   return (
