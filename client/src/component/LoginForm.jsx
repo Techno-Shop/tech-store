@@ -19,9 +19,11 @@ function LoginForm() {
    const [ isConnected, setIsConnected] = useState(false);
    const [ errors, setErrors] = useState(false);
    const navigate = useNavigate();
+   
+//    const {  email, password } = form;
 
    const handleChange = (event) =>{
-     setForm({...form, [event.target.name]: event.target.value});
+     setForm({ ...form,[event.target.name]: event.target.value});
          console.log(form);
     }
 //   XMLHttpRequest from a different domain cannot set cookie values for their own 
@@ -46,7 +48,7 @@ function LoginForm() {
     
     <MDBContainer fluid>
 
-      <MDBRow className='d-flex justify-content-center align-items-center h-100'>
+      <MDBRow className='d-flex justify-content-center align-items-center h-100' onSubmit={handleSubmit}>
         <MDBCol col='12'>
 
           <MDBCard className='bg-white my-5 mx-auto' style={{borderRadius: '1rem', maxWidth: '500px'}}>
@@ -55,12 +57,12 @@ function LoginForm() {
               <h2 className="fw-bold mb-2 text-center">Sign in</h2>
               <p className="text-white-50 mb-3">Please enter your login and password!</p>
 
-              <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
-              <MDBInput wrapperClass='mb-4 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
+              <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg" value={form.email} onChange={handleChange}/>
+              <MDBInput wrapperClass='mb-4 w-100' label='Password' id='formControlLg' type='password' size="lg" value={form.password} onChange={handleChange}/>
 
               <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
 
-              <MDBBtn size='lg'>
+              <MDBBtn size='lg' >
                 Login
               </MDBBtn>
 
