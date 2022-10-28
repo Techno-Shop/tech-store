@@ -21,7 +21,7 @@ const productSchema = new mongoose.Schema({
     type: String,
     default: "latest available of this generation ",
   },
-  image: String,
+  imageUrl: String,
 });
 
 const product=mongoose.model("products",productSchema)
