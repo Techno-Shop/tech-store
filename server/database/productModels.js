@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
   instock: {
@@ -21,7 +21,7 @@ const productSchema = new mongoose.Schema({
     type: String,
     default: "latest available of this generation ",
   },
-  image: String,
+  imageUrl: String,
 });
 
 const product=mongoose.model("products",productSchema)

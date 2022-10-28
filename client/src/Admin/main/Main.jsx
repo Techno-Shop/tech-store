@@ -1,4 +1,5 @@
 import React from 'react'
+import AddProduct from './Comps/AddProduct'
 import DataTable from './Comps/DataTable'
 import "./MainSec.css"
 

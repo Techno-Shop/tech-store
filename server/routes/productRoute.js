@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const product = require("../models/productModels");
+const product = require("../database/productModels");
 
 // add product
 router.post("/add", (req, res) => {
@@ -10,7 +10,7 @@ router.post("/add", (req, res) => {
     price: req.body.price,
     instock: req.body.instock,
     description: req.body.description,
-    image: req.body.image,
+    imageUrl: req.body.imageUrl,
   });
   newProduct
     .save()
