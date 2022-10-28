@@ -27,8 +27,10 @@ function Admin(props) {
      if (view === "products") {
       return (
         <Main
+
           cols={products}
           rows={products}
+         
         />
       );
     } else if (view === "add") {
