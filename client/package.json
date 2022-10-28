@@ -20,6 +20,7 @@
 >>>>>>> 9a8f82f186ee33f8db1e27499b0e10fd146d2b12
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-bootstrap-sidebar-menu": "^2.0.3",
     "react-dom": "^18.2.0",
     "react-router": "^6.4.2",
     "react-router-dom": "^6.4.2",

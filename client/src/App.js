@@ -6,6 +6,7 @@ import Sidebar from "./Admin/Sidebar/Sidebar";
 
 import carosel from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarComp from "./component/NavbarComp";
 
 
 function App() {
@@ -26,10 +27,10 @@ const [data,setData]=useState([]);
         
           
          
-
+ <Route exact path="/"  index element={< NavbarComp />} />
 
           {/* TODO: change the main view to the home page then add a route to the admin with /admin */}
-          <Route path="/" element={ <Admin/>} />
+          <Route path="/admin" element={ <Admin/>} />
        
 
         </Routes>

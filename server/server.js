@@ -17,7 +17,9 @@ app.use(express.static(__dirname + "/../client/public"));
 app.use(cors({origin : ["http://localhost:3000"],
  credentials : true,
 }));
- app.use("/auth", userRoutes);
+app.use("/auth", userRoutes);
+app.use("/product",productRouter)
+
 app.listen(PORT, () =>
 console.log(`app listening at http://localhost:${PORT}`)
 );
