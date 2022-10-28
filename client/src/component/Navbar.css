@@ -1,3 +1,63 @@
-.FormControl{
-    color: blueviolet;
+*{
+    color:white;
+  
 }
+
+.header{
+    background-color: #111;
+    height:150px;
+}
+
+.logo{
+    width: 15%;
+    height: inherit;
+    float: left;
+}
+.rightElement{
+    float:right;
+}
+ul{
+    display: flex;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+li{
+    margin:30px 15px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.searchBar{
+width: 28%;
+text-align: center;
+background-color: #00BFFF;
+float: left;
+margin-top: 45px;
+height: 40px;
+margin-left: 18%;
+}
+input{
+    padding: 10px;
+    width: 89%;
+    float:left;
+    margin-left:3px;
+    height: 90%;
+    margin-top: 2px;
+    border: transparent;
+    background-color: #111;
+}
+::placeholder {
+    color: white;
+    opacity: 0.8;
+  }
+button{
+   border: none;
+   background-color: transparent;
+   margin-top: 5px;
+}
+li:hover {
+    color: #00BFFF;
+  }
+
+
+
