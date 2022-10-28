@@ -14,14 +14,11 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/public"));
-app.use(cors({origin : ["http://localhost:3000"],
- credentials : true,
-}));
+app.use(cors());
 app.use("/auth", userRoutes);
 app.use("/product",productRouter)
 
 app.listen(PORT, () =>
 console.log(`app listening at http://localhost:${PORT}`)
 );
-
 
