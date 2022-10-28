@@ -10,7 +10,7 @@ router.post("/add", (req, res) => {
     price: req.body.price,
     instock: req.body.instock,
     description: req.body.description,
-    image: req.body.image,
+    imageUrl: req.body.imageUrl,
   });
   newProduct
     .save()

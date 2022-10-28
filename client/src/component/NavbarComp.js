@@ -1,38 +1,28 @@
-import React, {Component} from 'react'
-import {Navbar, Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
+import React from "react";
+import "./Navbar.css";
+import SearchIcon from '@mui/icons-material/Search';
+import PersonIcon from '@mui/icons-material/Person';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-export default class NavbarComp extends Component {
-    render() {
-        return (
-            <div>
-    <Navbar bg="dark" variant={"dark"} expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  
-
-  
-            </div>
-        )
-    }
+function NavbarComp() {
+  return (
+    <div className="header">
+      <div className="logo">
+        <img alt="logo" src="https://res.cloudinary.com/dmqowjr06/image/upload/v1666969385/tech-store/isolated-monochrome-white_nws0ly.svg"/>
+      </div>
+      <div className="searchBar">
+        <input type="text" placeholder="Search..." />
+        <button><SearchIcon fontSize="medium"></SearchIcon></button>
+        
+      </div>
+      <div className="rightElement">
+        <ul>
+          <li><ShoppingCartIcon/> 0.000 TND</li>
+          <li><PersonIcon/> My Account</li>
+        </ul>
+      </div>
+    </div>
+  );
 }
 
+export default NavbarComp;

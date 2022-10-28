@@ -3,18 +3,18 @@ import { DataGrid } from "@mui/x-data-grid";
 
 export default function DataTable(props) {
   const columns = Object.keys(props.cols[0]).map((e) => {
-    return { field: e, headerName: e, width: 90 };
+    return { field: e, headerName: e, width: 130 };
   });
-  console.log(props.cols);
+  const rows=props.rows.map((e,i)=>{return {id:i,...e}})
 
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div style={{ height: 500, width: "100%" }}>
       <DataGrid
-        rows={props.rows}
+        rows={rows}
         columns={columns}
-        pageSize={5}
+        pageSize={10}
         rowsPerPageOptions={[5]}
-        checkboxSelection
+        checkboxSelection={props.check}
       />
     </div>
   );
