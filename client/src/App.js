@@ -39,9 +39,6 @@ function App() {
           <Route  path="/Register" element= {<Register/>} />
           <Route  path="/logout" element= {<LogOut/>} />
           <Route path="/admin" element={<Admin />} />
-
-          <Route exact path="/" index element={<NavbarComp />} />
-
         </Routes>
       </Router>
     </div>
