@@ -5,10 +5,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { IconButton, Rating } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
 export default function Cards() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 500 }}>
       <CardMedia
         component="img"
         height="140"
@@ -16,18 +19,21 @@ export default function Cards() {
         alt="green iguana"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        <Typography gutterBottom variant="h7" component="div">
+          PC PORTABLE
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+        <Typography gutterBottom variant="h7" component="div" color={"#00BFFF"}>
+          3500.00 DT
         </Typography>
+        
+        <IconButton aria-label="Add to Cart" 	mt={"10px"}>
+          <ShoppingCartIcon  fontSize='medium' />
+        </IconButton>
+        <IconButton aria-label="Details" mt={"50px"}>
+          <RemoveRedEyeIcon fontSize='medium'/>
+        </IconButton>
+        
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }

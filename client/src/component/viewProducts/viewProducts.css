@@ -2,32 +2,38 @@
     background-color:#E8E8E8 ;
     display: grid;
   grid-template-areas:
-    'none header header header header header'
-    'menu main main main main main'
-    'menu main main main main main';
+    'none top top top top top'
+    'side main main main main main'
+    'side main main main main main';
   gap: 10px;
   padding: 10px;
   height: 100%;
   color:black;
+  clear:both;
 }
-.header{
+.top{
     background-color: white;
     height: 30px;
-    grid-area: header;
+    grid-area: top;
     text-align: left;
     color:black;
+    border-radius:5px ;
+    margin-top: 10px;
     
 }
-.menu{
+.side{
     background-color: white;
     height: 500px;
-    grid-area: menu;
+    grid-area: side;
     color:black;
     text-align: left;
     border-radius: 5px;
+    margin-right:10px;
+    padding-left:20px;
+    margin-top: 10px;
 }
-.main{
-   
+.cardsContainer{
+   margin-top: 10px;
     height:500px;
     grid-area: main;
 }
@@ -44,7 +50,8 @@ h5{
 }
 .minMax{
     display: flex;
-    margin-left: 30px;
+    margin-left: 25px;
+    margin-right: 10px;
 }
 .MInputs{
     width: 80px;

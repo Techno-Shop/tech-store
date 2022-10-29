@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarComp from "./component/NavbarComp";
 import axios from "axios";
 import ViewProducts from "./component/viewProducts/ViewProducts";
+import AllProduct from "./component/AllProd/AllProduct";
 
 function App() {
   const [data, setData] = useState([]);
@@ -24,7 +25,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
           
           {/* TODO: change the main view to the home page then add a route to the admin with /admin */}
-         <Route exact path="/" index element={<ViewProducts />} />
+         <Route exact path="/" index element={<AllProduct/>} />
         </Routes>
       </Router>
     </div>

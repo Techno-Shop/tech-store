@@ -3,12 +3,13 @@ import "./viewProducts.css";
 import {Checkbox, FormControl, FormControlLabel, FormGroup, Slider, TextField } from "@mui/material";
 import NavbarComp from "../NavbarComp";
 import Cards from "../Card/Cards";
+import Grids from "../Grids";
 
 function ViewProducts() {
   return (
     <div className="pageContainer">
-      <div className="header">top bar</div>
-      <div className="menu">
+      <div className="top"></div>
+      <div className="side">
         <h4>FILTER BY</h4>
         <h5>Price</h5>
         <div className="minMax">
@@ -39,8 +40,8 @@ function ViewProducts() {
           </FormGroup>
         </div>
       </div>
-      <div className="main">
-        <div><Cards/></div>
+      <div className="cardsContainer">
+        <div><Grids/></div>
       </div>
     </div>
   );
