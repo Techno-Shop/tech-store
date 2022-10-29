@@ -40,10 +40,6 @@ function LoginForm() {
    .catch(err=>setErrors(err.res.data))
 }
 
-   
-
-
-
   return (
     
     <MDBContainer fluid>
