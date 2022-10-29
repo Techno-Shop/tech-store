@@ -27,7 +27,7 @@
 .searchBar{
 width: 28%;
 text-align: center;
-background-color: #00BFFF;
+background-color: #214753;
 float: left;
 margin-top: 45px;
 height: 40px;
@@ -44,7 +44,7 @@ input{
     background-color: #111;
 }
 ::placeholder {
-    color: white;
+    color: rgb(20, 20, 20);
     opacity: 0.8;
   }
 button{
