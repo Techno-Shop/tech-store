@@ -11,6 +11,9 @@ import LogOut from "./component/LogOut";
 import axios from "axios";
 import ViewProducts from "./component/viewProducts/ViewProducts";
 import AllProduct from "./component/AllProd/AllProduct";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 
 
 
@@ -35,6 +38,7 @@ function App() {
   
   return (
     <div className="App">
+      <ToastContainer position="top-center" />
       <Router>
         <Routes>
 

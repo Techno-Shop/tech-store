@@ -11,15 +11,15 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
 export default function Cards() {
   return (
-    <Card sx={{ maxWidth: 500 }}>
+    <Card  sx={{ maxWidth: 500 }}>
       <CardMedia
         component="img"
         height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image = "/static/images/cards/contemplative-reptile.jpg" 
         alt="green iguana"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
+      <CardContent >
+        <Typography  gutterBottom variant="h6" component="div">
           PC PORTABLE
         </Typography>
         <Typography gutterBottom variant="h6" component="div" color={"#00BFFF"}>
@@ -33,7 +33,7 @@ export default function Cards() {
           <RemoveRedEyeIcon fontSize='medium'/>
         </IconButton>
         
-      </CardContent>
+      </CardContent >
     </Card>
   );
 }

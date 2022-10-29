@@ -6,6 +6,7 @@ import axios from "axios";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import '../MainSec.css';
+import { toast } from "react-toastify"
 
 
 function AddProduct() {
@@ -43,7 +44,8 @@ function AddProduct() {
     axios
       .post("http://localhost:3001/product/add", product)
       .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      toast.success("upload success"  ) ;
   };
 
   return (
