@@ -19,10 +19,10 @@ export default function Cards() {
         alt="green iguana"
       />
       <CardContent>
-        <Typography gutterBottom variant="h7" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           PC PORTABLE
         </Typography>
-        <Typography gutterBottom variant="h7" component="div" color={"#00BFFF"}>
+        <Typography gutterBottom variant="h6" component="div" color={"#00BFFF"}>
           3500.00 DT
         </Typography>
         
