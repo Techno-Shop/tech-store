@@ -6,7 +6,7 @@ import Sidebar from "./Admin/Sidebar/Sidebar";
 
 
 import Carousele from "./component/Carousele";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 

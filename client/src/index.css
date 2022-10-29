@@ -1,8 +1,10 @@
 body {
+  background-color: #E8E8E8 ;
   margin: 0;
   font-family: "Rubik","Helvetica","Arial","sans-serif";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
