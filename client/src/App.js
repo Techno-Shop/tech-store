@@ -6,10 +6,11 @@ import Sidebar from "./Admin/Sidebar/Sidebar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarComp from "./component/NavbarComp";
 import axios from "axios";
+import ViewProducts from "./component/viewProducts/ViewProducts";
 
 function App() {
   const [data, setData] = useState([]);
-  
+
   useEffect(() => {
     axios.get("http://localhost:3001/product/all").then((res) => {
       setData(res.data);
@@ -20,9 +21,10 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path="/" index element={<NavbarComp />} />
+        <Route path="/admin" element={<Admin />} />
+          
           {/* TODO: change the main view to the home page then add a route to the admin with /admin */}
-          <Route path="/admin" element={<Admin />} />
+         <Route exact path="/" index element={<ViewProducts />} />
         </Routes>
       </Router>
     </div>

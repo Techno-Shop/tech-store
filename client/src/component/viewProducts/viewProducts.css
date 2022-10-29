@@ -1,0 +1,60 @@
+.pageContainer{
+    background-color:#E8E8E8 ;
+    display: grid;
+  grid-template-areas:
+    'none header header header header header'
+    'menu main main main main main'
+    'menu main main main main main';
+  gap: 10px;
+  padding: 10px;
+  height: 100%;
+  color:black;
+}
+.header{
+    background-color: white;
+    height: 30px;
+    grid-area: header;
+    text-align: left;
+    color:black;
+    
+}
+.menu{
+    background-color: white;
+    height: 500px;
+    grid-area: menu;
+    color:black;
+    text-align: left;
+    border-radius: 5px;
+}
+.main{
+   
+    height:500px;
+    grid-area: main;
+}
+h4{
+    color:black;
+    margin:10px;
+    font-weight: 300;
+}
+h5{
+    color:#00BFFF;
+    margin:20px;
+    font-weight: 500;
+    font-size: 20px;
+}
+.minMax{
+    display: flex;
+    margin-left: 30px;
+}
+.MInputs{
+    width: 80px;
+    margin-left: 10px;
+}
+.Category{
+    margin-left: 40px;
+}
+.border{
+    border-bottom: black solid 1px;
+    width: 80%;
+    
+}
