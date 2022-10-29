@@ -1,0 +1,18 @@
+.sideBar{
+    float:left;
+    width:20%;
+    background-color: 	#F0FFFF;
+    height: 100vh;
+}
+
+li{
+margin: 40px 15%;
+list-style: none;
+text-align: left;
+font-size: 20px;
+cursor: pointer;
+}
+img{
+    margin-bottom: 50px;
+    padding:50px
+}
