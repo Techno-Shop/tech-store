@@ -9,6 +9,14 @@ import Login from "./component/Login";
 import Register from "./component/Register";
 import LogOut from "./component/LogOut";
 import axios from "axios";
+import ViewProducts from "./component/viewProducts/ViewProducts";
+import AllProduct from "./component/AllProd/AllProduct";
+
+
+
+
+
+
 
 
 
@@ -34,7 +42,7 @@ function App() {
 
 
 
-          <Route exact path="/" index element={< NavbarComp />} />
+          <Route exact path="/" index element={< AllProduct />} />
           <Route  path="/login" element= {<Login/>} />
           <Route  path="/Register" element= {<Register/>} />
           <Route  path="/logout" element= {<LogOut/>} />

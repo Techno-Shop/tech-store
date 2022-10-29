@@ -16,9 +16,9 @@ function NavbarComp() {
         
       </div>
       <div className="rightElement">
-        <ul>
-          <li><ShoppingCartIcon/> 0.000 TND</li>
-          <li><PersonIcon/> My Account</li>
+        <ul className="itemContainer">
+          <li className="HeaderItem"><ShoppingCartIcon/> 0.000 TND</li>
+          <li className="HeaderItem"><PersonIcon/> My Account</li>
         </ul>
       </div>
     </div>
