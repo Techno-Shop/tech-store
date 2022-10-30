@@ -11,7 +11,7 @@ import Footer from "../Footer/Footer";
 function Home(props) {
   return (
     <div className="home">
-      <NavbarComp cartData={props.cartData}/>
+      <NavbarComp cartData={props.cartData}  connected={props.connected} sign={props.sign}/>
       <div className="carousel">
         <Carousele />
       </div>

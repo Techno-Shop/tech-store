@@ -2,10 +2,10 @@ import React from 'react';
 import LoginForm from './LoginForm';
 
 
-function Login() {
+function Login(props) {
   return (
     <div>
-        <LoginForm/>
+        <LoginForm sign={props.sign} user={props.user} signState={props.signState}/>
     </div>
   )
 }

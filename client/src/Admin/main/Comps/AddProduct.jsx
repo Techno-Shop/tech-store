@@ -8,7 +8,7 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import '../MainSec.css';
 
 
-function AddProduct() {
+function AddProduct(props) {
   const [url, setUrl] = useState("");
   const [product, setProduct] = useState({});
   const [image, setImage] = useState("");
@@ -49,7 +49,7 @@ function AddProduct() {
   return (
     <div className="mainSec">
       <div className="loginSect">
-        <p>Logged In Person</p>
+        <p>Welcome  {props.connected}</p>
       </div>
     <div className="data">
         <div>

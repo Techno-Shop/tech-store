@@ -6,9 +6,7 @@ const bcrypt = require('bcryptjs');
 
 async function register(req, res) {
     try {
-        // get email and psw word
         const { username, role, email, password, imageUrl } = req.body;
-        //hashing the password
         const hashedPassword = bcrypt.hashSync(password, 10);
         await Users.create({ username, role, email, password: hashedPassword, imageUrl });
         res.status(201).json({ message: "user added successfully" })
@@ -23,29 +21,25 @@ async function login(req, res) {
     try {
         const { email, password } = req.body;
         const user = await Users.findOne({ email });
-        if (!user) return res.status(404).json({ message: "email not found!! please enter your exact email address or you can make a new one" })
+
+        if (!user) return res.status(404).json({status:"err" ,message: "email not found!! please enter your exact email address or you can make a new one" })
 
         const isMatched = bcrypt.compareSync(password, user.password);
-        if (!user) return response.status(404).json({ message: "wrong password" })
-        // create a jwt token
-        // please visit (https://www.rfc-editor.org/rfc/rfc7519) for more info 
+        if (!isMatched ) return res.status(404).json({status:"err", message: "wrong password" })
         const exp = Date.now() + 1000 * 60 * 60 * 24 * 30;
         const token = jwt.sign({ sub: user._id, exp }, process.env.SECRET_jwt_code);
-        // take a look here (https://github.com/jshttp/cookie) so you can understand the diffrent options that can help you to Set the cookie 
-        // Authorization : cookie name  / token is the value / option
         const options = {
             expires: new Date(exp),
-            // httpOnly make only the browser & our server can read the cookie
+           
             httpOnly: true,
             sameSite: "lax",
             secure: process.env.NODE_ENV === "production",
         }
         res.cookie("authorization", token, options);
-        // send it
-        res.status(201).json({ message: " welcome", token, user })
+        res.status(201).json({ status: " success", token, user ,message:`welcom ${user.username}` })
     } catch (err) {
         console.log(err);
-        res.status(404).json("error")
+        res.status(404).json(err)
     }
 }
 

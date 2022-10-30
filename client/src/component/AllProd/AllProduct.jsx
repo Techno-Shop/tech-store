@@ -10,7 +10,7 @@ function AllProduct(props) {
     <div>
       <div>
         
-        <NavbarComp cartData={props.cartData}/>
+        <NavbarComp cartData={props.cartData} connected={props.connected} sign={props.sign}/>
         <center>
           <div className="lessWidth">
             <ViewProducts data={props.data} cart={props.cart} />

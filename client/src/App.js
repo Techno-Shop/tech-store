@@ -17,8 +17,18 @@ import Home from "./component/Home/Home";
 function App() {
   const [data, setData] = useState([]);
   const [cart,setCart] = useState([]);
-  // let [searchParams, setSearchParams] = useSearchParams();
-  // setSearchParams({ hello: "world"  });
+  const [sign, setSing] = useState(false);
+  const [userName,setUserName]= useState("");
+
+const signHandler = ()=>{
+  setSing(true);
+  
+}
+  const userNameHandler = (user) => {
+    setUserName(user)
+    console.log(user)
+  }
+
     const user = { isConnected: false }
   useEffect(() => {
     axios.get("http://localhost:3001/product/all").then((res) => {
@@ -31,24 +41,18 @@ function App() {
   }
   return (
     <div className="App">
-      
       <Router>
         <Routes>
-
-
-
-
-
-          <Route exact path="/" index element={data.length&&< Home data={data} cart={cartHandler} cartData={cart}/>} />
-          <Route  path="/login" element= {<Login/>} />
-          <Route  path='/products' element= {data.length&& <AllProduct data={data} cart={cartHandler} cartData={cart}/>} />
+          <Route exact path="/" index element={data.length&&< Home data={data} cart={cartHandler} cartData={cart} connected={userName} sign={sign}/>} />
+          <Route  path="/login" element= {<Login signstate={sign} sign={signHandler} user={userNameHandler}/>} />
+          <Route  path='/products' element= {data.length&& <AllProduct data={data} cart={cartHandler} cartData={cart} connected={userName} sign={sign}/>} />
           <Route  path="/Register" element= {<Register/>} />
           <Route  path="/logout" element= {<LogOut/>} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin  connected={userName} sign={sign}/>} />
         </Routes>
       </Router>
     </div>
   );
 }
 
-export default App
+export default App;
