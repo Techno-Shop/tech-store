@@ -5,7 +5,9 @@ import NavbarComp from "../NavbarComp";
 import Cards from "../Card/Cards";
 import Grids from "../Grids";
 
+
 function ViewProducts(props) {
+
   return (
     <div className="pageContainer">
       <div className="top"></div>
@@ -41,7 +43,7 @@ function ViewProducts(props) {
         </div>
       </div>
       <div className="cardsContainer">
-        <div><Grids data={props.data}/></div>
+        <div><Grids data={props.data} cart={props.cart}/></div>
       </div>
     </div>
   );

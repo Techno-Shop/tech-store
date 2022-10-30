@@ -5,13 +5,15 @@ import ViewProducts from "../viewProducts/ViewProducts";
 import "./allProd.css";
 
 function AllProduct(props) {
+
   return (
     <div>
       <div>
-        <NavbarComp />
+        
+        <NavbarComp cartData={props.cartData}/>
         <center>
           <div className="lessWidth">
-            <ViewProducts data={props.data}/>
+            <ViewProducts data={props.data} cart={props.cart} />
           </div>
         </center>
         <div className="footer">

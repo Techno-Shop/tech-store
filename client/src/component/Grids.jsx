@@ -15,15 +15,16 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function Grids(props) {
-  console.log(props.data)
   return (
     <Box sx={{ flexGrow: 3 }}>
       <Grid container spacing={4}>
       {props.data.map((e, i) => {
                 return (
+                  e.imageUrl?
                   <Grid item xs={11} sm={8} md={7} lg={4}>
-                    <Cards key={i} e={e}/>
-                  </Grid>
+                    <Cards key={i} e={e} cart={props.cart}/>
+                  </Grid>:
+                  console.log("error")
                 );
               })}
       </Grid>

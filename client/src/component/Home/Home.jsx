@@ -11,7 +11,7 @@ import Footer from "../Footer/Footer";
 function Home(props) {
   return (
     <div className="home">
-      <NavbarComp />
+      <NavbarComp cartData={props.cartData}/>
       <div className="carousel">
         <Carousele />
       </div>
@@ -30,13 +30,13 @@ function Home(props) {
           <Box sx={{ flexGrow: 3 }}>
             <Grid container spacing={8}>
                  <Grid item xs={11} sm={8} md={7} lg={4}>
-                    <Cards  e={props.data[0]}/>
+                    <Cards  e={props.data[0]} cart={props.cart}/>
                   </Grid>
               <Grid item xs={11} sm={8} md={7} lg={4}>
-                <Cards  e={props.data[1]}/>
+                <Cards  e={props.data[1]} cart={props.cart}/>
               </Grid>
               <Grid item xs={11} sm={8} md={7} lg={4}>
-                <Cards  e={props.data[2]}/>
+                <Cards  e={props.data[2]} cart={props.cart}/>
               </Grid>
             </Grid>
           </Box>

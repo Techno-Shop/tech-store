@@ -14,7 +14,7 @@ export default function Cards(props) {
 
   const [basicModal, setBasicModal] = useState(false);
   const toggleShow = () => setBasicModal(!basicModal);
-
+  
   return (
     <Card sx={{ maxWidth: 500 }}>
       <CardMedia
@@ -23,7 +23,6 @@ export default function Cards(props) {
         image={JSON.parse(props.e.imageUrl)}
         alt={props.e.name}
       />
-      {console.log(props.e)}
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
           {props.e.name}
@@ -32,13 +31,13 @@ export default function Cards(props) {
         {props.e.price}
         </Typography>
         
-        <IconButton aria-label="Add to Cart" 	mt={"10px"}>
+        <IconButton aria-label="Add to Cart" 	mt={"10px"} onClick={()=>props.cart(props.e)}>
           <ShoppingCartIcon  fontSize='medium' />
         </IconButton>
         <IconButton aria-label="Details" mt={"50px"} onClick={toggleShow}>
           <RemoveRedEyeIcon fontSize='medium'/>
         </IconButton>
-        <Dialogue data={props.e} toggle={toggleShow} modal={basicModal} setbasic={setBasicModal}/>
+        <Dialogue data={props.e} toggle={toggleShow} modal={basicModal} setbasic={setBasicModal} cart={props.cart}/>
       </CardContent>
     </Card>
   );

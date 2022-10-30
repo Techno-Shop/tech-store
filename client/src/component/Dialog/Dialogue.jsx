@@ -32,7 +32,7 @@ export default function Dialogue(props) {
               <MDBBtn color="secondary" onClick={props.toggle}>
                 Close
               </MDBBtn>
-              <MDBBtn>Add to Cart</MDBBtn>
+              <MDBBtn onClick={()=>props.cart(props.data)}>Add to Cart</MDBBtn>
             </MDBModalFooter>
           </MDBModalContent>
         </MDBModalDialog>
