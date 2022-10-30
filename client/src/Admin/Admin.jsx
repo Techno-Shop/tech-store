@@ -24,11 +24,11 @@ function Admin(props) {
   };
   const renderView = () => {
     if (view === "users") {
-      return users.length && <Main cols={users} rows={users} view={view}/> 
+      return users.length && <Main cols={users} rows={users} view={view} connected={props.connected} sign={props.sign}/> 
     } else if (view === "products") {
-      return <Main cols={products} rows={products} view={view}/>;
+      return <Main cols={products} rows={products} view={view} connected={props.connected} sign={props.sign}/>;
     } else if (view === "add") {
-      return <AddProduct/>;
+      return <AddProduct connected={props.connected} sign={props.sign}/>;
     }
   };
 

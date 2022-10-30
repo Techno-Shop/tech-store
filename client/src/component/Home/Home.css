@@ -1,0 +1,15 @@
+.home{
+    clear: both;
+}
+.carousel{
+    height: 700px;
+    
+}
+.mostBought{
+    width: 90%;
+    padding: 20px;
+    margin-top: 20px;
+}
+.mostTitle{
+    padding: 10px;
+}

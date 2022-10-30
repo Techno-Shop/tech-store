@@ -14,32 +14,19 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function Grids() {
+function Grids(props) {
   return (
     <Box sx={{ flexGrow: 3 }}>
       <Grid container spacing={4}>
-        <Grid item xs={11} sm={7} md={5} lg={3}>
-          <Cards />
-        </Grid>
-        <Grid item xs={11} sm={7} md={5} lg={3}>
-          <Cards />
-        </Grid>
-        <Grid item xs={11} sm={7} md={5} lg={3}>
-          <Cards />
-        </Grid>
-        <Grid item xs={11} sm={7} md={5} lg={3}>
-          <Cards />
-        </Grid>
-        <Grid item xs={11} sm={7} md={5} lg={3}>
-          <Cards />
-        </Grid>
-        <Grid item xs={11} sm={7} md={5} lg={3}>
-          <Cards />
-        </Grid>
-        <Grid item xs={11} sm={7} md={5} lg={3}>
-          <Cards />
-        </Grid>
-
+      {props.data.map((e, i) => {
+                return (
+                  e.imageUrl?
+                  <Grid item xs={11} sm={8} md={7} lg={4}>
+                    <Cards key={i} e={e} cart={props.cart}/>
+                  </Grid>:
+                  console.log("error")
+                );
+              })}
       </Grid>
     </Box>
   );

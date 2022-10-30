@@ -5,10 +5,11 @@
     color:white;
 }
 
-.logo{
+.imgLogo{
     width: 15%;
     height: inherit;
     float: left;
+    translate: 21px 43px;
 }
 .rightElement{
     float:right;
@@ -33,7 +34,7 @@ margin-top: 45px;
 height: 40px;
 margin-left: 18%;
 }
-input{
+.searchInput{
     padding: 10px;
     width: 89%;
     float:left;
@@ -41,7 +42,8 @@ input{
     height: 90%;
     margin-top: 2px;
     border: transparent;
-    background-color: #111;
+    background-color: white;
+    color:black;
 }
 ::placeholder {
     color: rgb(20, 20, 20);
