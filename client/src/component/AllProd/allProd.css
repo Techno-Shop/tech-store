@@ -1,3 +1,8 @@
 .lessWidth{
     width: 90%;
 }
+.footer {
+    position: relative;
+    bottom: 0;
+
+}

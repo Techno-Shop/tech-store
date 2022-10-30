@@ -9,21 +9,22 @@ import { IconButton, Rating } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
-export default function Cards() {
+export default function Cards(props) {
   return (
     <Card sx={{ maxWidth: 500 }}>
       <CardMedia
         component="img"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-        alt="green iguana"
+        height="300"
+        image={JSON.parse(props.e.imageUrl)}
+        alt={props.e.name}
       />
+      {console.log(props.e.imageUrl)}
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
-          PC PORTABLE
+          {props.e.name}
         </Typography>
         <Typography gutterBottom variant="h6" component="div" color={"#00BFFF"}>
-          3500.00 DT
+        {props.e.price}
         </Typography>
         
         <IconButton aria-label="Add to Cart" 	mt={"10px"}>

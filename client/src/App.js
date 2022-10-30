@@ -24,6 +24,7 @@ function App() {
   
   return (
     <div className="App">
+      {console.log(data)}
       <Router>
         <Routes>
 
@@ -31,8 +32,9 @@ function App() {
 
 
 
-          <Route exact path="/" index element={< Home />} />
+          <Route exact path="/" index element={data.length&&< Home data={data}/>} />
           <Route  path="/login" element= {<Login/>} />
+          <Route  path="/products" element= {<AllProduct data={data}/>} />
           <Route  path="/Register" element= {<Register/>} />
           <Route  path="/logout" element= {<LogOut/>} />
           <Route path="/admin" element={<Admin />} />

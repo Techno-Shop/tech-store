@@ -5,9 +5,10 @@ import "./Home.css";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Cards from "../Card/Cards";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
+import Footer from "../Footer/Footer";
 
-function Home() {
+function Home(props) {
   return (
     <div className="home">
       <NavbarComp />
@@ -16,26 +17,34 @@ function Home() {
       </div>
       <center>
         <div className="mostTitle">
-        <Typography gutterBottom variant="h4" component="div" color={"#00BFFF"}>
+          <Typography
+            gutterBottom
+            variant="h4"
+            component="div"
+            color={"#00BFFF"}
+          >
             Our Most Liked Products
-        </Typography>
+          </Typography>
         </div>
         <div className="mostBought">
           <Box sx={{ flexGrow: 3 }}>
             <Grid container spacing={8}>
+                 <Grid item xs={11} sm={8} md={7} lg={4}>
+                    <Cards  e={props.data[0]}/>
+                  </Grid>
               <Grid item xs={11} sm={8} md={7} lg={4}>
-                <Cards />
+                <Cards  e={props.data[1]}/>
               </Grid>
               <Grid item xs={11} sm={8} md={7} lg={4}>
-                <Cards />
-              </Grid>
-              <Grid item xs={11} sm={8} md={7} lg={4}>
-                <Cards />
+                <Cards  e={props.data[2]}/>
               </Grid>
             </Grid>
           </Box>
         </div>
       </center>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
