@@ -36,7 +36,7 @@ async function login(req, res) {
             secure: process.env.NODE_ENV === "production",
         }
         res.cookie("authorization", token, options);
-        res.status(201).json({ status: " success", token, user ,message:`welcom ${user.username} to your dashbord` })
+        res.status(201).json({ status: " success", token, user ,message:`welcom ${user.username}` })
     } catch (err) {
         console.log(err);
         res.status(404).json(err)

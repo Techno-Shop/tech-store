@@ -47,7 +47,7 @@ function RegisterForm() {
             <MDBRow className='g-0 d-flex align-items-center'>
 
               <MDBCol md='4'>
-                <MDBCardImage src='https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg' alt='phone' className='rounded-t-5 rounded-tr-lg-0' fluid />
+                <MDBCardImage src='https://techstore-bf.com/img/cetelcom-logo-1640954613.jpg' alt='phone' className='rounded-t-5 rounded-tr-lg-0' fluid />
               </MDBCol>
 
               <MDBCol md='8'>
