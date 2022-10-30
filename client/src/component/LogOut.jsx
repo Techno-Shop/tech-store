@@ -9,7 +9,7 @@ function LogOut() {
 
 
    const disconnect = ()=> {
-    axios.get('/auth/logout',{ withCredentials: true})
+    axios.get('http://localhost:3001/auth/logout')
     .then(res=>{
       alert(res.data)
       navigate('/login')
