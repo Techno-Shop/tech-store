@@ -4,10 +4,11 @@ import DataTable from "./Comps/DataTable";
 import "./MainSec.css";
 
 function Main(props) {
+  console.log(props.connected)
   return (
     <div className="mainSec">
       <div className="loginSect">
-        <p>Logged In Person</p>
+        <p>Welcome  {props.connected}</p>
       </div>
         <div className="data">
           {props.view === "users" ? (

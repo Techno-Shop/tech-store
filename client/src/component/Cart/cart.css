@@ -1,0 +1,15 @@
+td{
+    color: black;
+    padding: 20px;
+}
+.cartImg{
+    width: 100px;
+    height: 100px;
+    
+}
+.total{
+    color:black;
+    text-align: right;
+    font-weight: 1000px;
+    font-size: 18px;
+}

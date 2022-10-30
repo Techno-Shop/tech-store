@@ -34,7 +34,7 @@
 }
 .cardsContainer{
    margin-top: 10px;
-    height:500px;
+    height:100%;
     grid-area: main;
 }
 h4{
