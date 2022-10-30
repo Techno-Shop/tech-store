@@ -28,16 +28,17 @@ function LoginForm() {
   const login = () => {
     axios.post('http://localhost:3001/auth/login', newUser)
     .then(response => {
-      if(response.data.status = "success"){
+      console.log(response)
+      if(response.data.status === "success"){
       alert(response.data.message)
         navigate("/admin")
-      }else if(response.data.status = "err"){
+      }else if(response.data.status === "err"){
         
         alert(response.data.message)
         setError(response.data.message)
       }
     })
-        .catch(err => { alert(err.message) });
+        .catch(err => { alert(err?.response?.data?.message);});
 }
 
 
