@@ -11,18 +11,7 @@ import LogOut from "./component/LogOut";
 import axios from "axios";
 import ViewProducts from "./component/viewProducts/ViewProducts";
 import AllProduct from "./component/AllProd/AllProduct";
-
-
-
-
-
-
-
-
-
-
-
-
+import Home from "./component/Home/Home";
 
 function App() {
   const [data, setData] = useState([]);
@@ -42,7 +31,7 @@ function App() {
 
 
 
-          <Route exact path="/" index element={< AllProduct />} />
+          <Route exact path="/" index element={< Home />} />
           <Route  path="/login" element= {<Login/>} />
           <Route  path="/Register" element= {<Register/>} />
           <Route  path="/logout" element= {<LogOut/>} />

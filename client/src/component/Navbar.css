@@ -5,10 +5,11 @@
     color:white;
 }
 
-.logo{
+.imgLogo{
     width: 15%;
     height: inherit;
     float: left;
+    translate: 21px 43px;
 }
 .rightElement{
     float:right;

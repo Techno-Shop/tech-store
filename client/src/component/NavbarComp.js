@@ -7,7 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 function NavbarComp() {
   return (
     <div className="header">
-      <div className="logo">
+      <div className="imgLogo">
         <img alt="logo" src="https://res.cloudinary.com/dmqowjr06/image/upload/v1666969385/tech-store/isolated-monochrome-white_nws0ly.svg"/>
       </div>
       <div className="searchBar">

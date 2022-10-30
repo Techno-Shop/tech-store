@@ -12,7 +12,7 @@ text-align: left;
 font-size: 20px;
 cursor: pointer;
 }
-img{
+.sideBar>img{
     margin-bottom: 50px;
     padding:50px
 }
