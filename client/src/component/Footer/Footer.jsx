@@ -6,7 +6,8 @@ import {
     MDBInput,
     MDBCol,
     MDBRow,
-    MDBBtn
+    MDBBtn,
+    
   } from 'mdb-react-ui-kit';
 
 function Footer() {

@@ -25,7 +25,7 @@ async function login(req, res) {
         if (!user) return res.status(404).json({status:"err" ,message: "email not found!! please enter your exact email address or you can make a new one" })
 
         const isMatched = bcrypt.compareSync(password, user.password);
-        if (!isMatched ) return res.status(404).json({status:"err", message: "wrong password" })
+        if (!isMatched ) return res.status(400).json({status:"err", message: "wrong password" })
         const exp = Date.now() + 1000 * 60 * 60 * 24 * 30;
         const token = jwt.sign({ sub: user._id, exp }, process.env.SECRET_jwt_code);
         const options = {
@@ -39,7 +39,7 @@ async function login(req, res) {
         res.status(201).json({ status: " success", token, user ,message:`welcom ${user.username}` })
     } catch (err) {
         console.log(err);
-        res.status(404).json(err)
+        res.status(500).json({status:" ", message: "Something went wrong !" })
     }
 }
 
