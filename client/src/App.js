@@ -46,8 +46,8 @@ const signHandler = ()=>{
           <Route exact path="/" index element={data.length&&< Home data={data} cart={cartHandler} cartData={cart} connected={userName} sign={sign}/>} />
           <Route  path="/login" element= {<Login signstate={sign} sign={signHandler} user={userNameHandler}/>} />
           <Route  path='/products' element= {data.length&& <AllProduct data={data} cart={cartHandler} cartData={cart} connected={userName} sign={sign}/>} />
-          <Route  path="/Register" element= {<Register/>} />
-          <Route  path="/logout" element= {<LogOut/>} />
+          <Route  path="/Register" element= {<Register />} />
+          <Route  path="/logout" element= {<LogOut />} />
           <Route path="/admin" element={<Admin  connected={userName} sign={sign}/>} />
         </Routes>
       </Router>

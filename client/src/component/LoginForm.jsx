@@ -34,6 +34,7 @@ function LoginForm(props) {
         console.log(response.data.user.username)
         props.user(response.data.user.username);
         response.data.user.role==="admin"? navigate("/admin"):navigate("/");
+        // response.data.user === "" ? navigate('/register') : navigate("/login")
       }else if(response.data.status = "err"){
         
         alert(response.data.message)
@@ -84,7 +85,10 @@ const gohome = () => {
                 <p>Don't have an account yet? </p>
                 <hr className="my-4" />
                 <MDBBtn size='lg' onClick={() =>{ props.sign()}}>
-                  register
+                  <Link to="/register">
+                     register
+                  </Link>
+                
                 </MDBBtn>
   
               </MDBCardBody>
@@ -100,9 +104,13 @@ const gohome = () => {
 }
 
 const signup = () => {
-  if (props.signState === true) {
-      return <Register />
-  }
+  if (props.signState === false) {
+      
+    return (
+     
+      <Register />
+  
+  ) }
   else {
       return gohome()
   }
